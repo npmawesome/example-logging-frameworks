@@ -1,0 +1,8 @@
+{
+  "name": "example-logging-frameworks",
+  "dependencies": {
+    "winston": "^0.7.3",
+    "bunyan": "^0.22.3",
+    "Faker": "^0.7.0"
+  }
+}
