@@ -9,6 +9,10 @@ setInterval(periodical, 500);
 function periodical() {
   var periodicalLogger = logger.child({sub: 'periodical'});
   var level = Faker.random.array_element(['trace', 'debug', 'info', 'warn', 'error']);
+  var msg = {info: Faker.Lorem.sentence()};
 
-  periodicalLogger[level]({info: Faker.Lorem.sentence()});
+  if(level === 'error')
+    msg = new Error(Faker.Lorem.sentence());
+
+  periodicalLogger[level](msg);
 }
